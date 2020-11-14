@@ -8,7 +8,7 @@ jobs:
       - run: 
           name: Create build
           command: |
-            mkdir /bin/insider
+            sudo mkdir /bin/insider
             make
             cp incider /bin/insider 
       - store_artifacts:
