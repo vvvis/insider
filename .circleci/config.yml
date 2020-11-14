@@ -1,8 +1,8 @@
 version: 2.1
 jobs:
-  docker:
-      - image:circleci/golang
-  steps:
-    - checkout
-    - run: echo "always runs"
-                          
+  build:
+    docker:
+        - image:circleci/golang
+    steps:
+      - checkout
+      - run: echo "always runs"                      
