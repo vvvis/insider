@@ -1,0 +1,11 @@
+version: 2
+jobs:
+        build:
+                docker:
+                        - image:circleci/golang
+        steps:
+                - checkout
+                - run:
+                        command: |
+                          cd insider
+                          make
