@@ -10,7 +10,7 @@ jobs:
           command: |
             sudo mkdir /bin/insider
             make
-            cp incider /bin/insider 
+            cp insider /bin/insider 
       - store_artifacts:
           path: /bin/insider
-          destination: incider
+          destination: insider
