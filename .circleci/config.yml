@@ -6,6 +6,6 @@ jobs:
     steps:
       - checkout
       - run:
-        command: cd insider
+          command: cd insider
       - run:
-        command: make
+          command: make
