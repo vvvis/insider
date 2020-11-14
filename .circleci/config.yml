@@ -5,7 +5,4 @@ jobs:
       - image: circleci/golang
     steps:
       - checkout
-      - run:
-          command: make
-      - store_artifacts:
-        path: ./incider
+      - run: make
