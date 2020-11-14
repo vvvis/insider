@@ -2,6 +2,6 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image:circleci/golang
+      - image:golang
     steps:
       - run: echo "always runs"                      
