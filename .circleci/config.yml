@@ -7,4 +7,5 @@ jobs:
       - checkout
       - run:
         command: cd insider
+      - run:
         command: make
