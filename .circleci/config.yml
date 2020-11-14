@@ -8,3 +8,4 @@ jobs:
       - run: make
       - store_artifacts:
           path: /bin/insider
+          destination: incider
