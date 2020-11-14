@@ -6,6 +6,6 @@ jobs:
                 - checkout
                 - run:
                         command: |
-                          cd insider
-                          make
+                          cd insider;
+                          make;
                           
