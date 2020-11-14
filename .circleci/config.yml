@@ -4,4 +4,7 @@ jobs:
     docker:
       - image: circleci/golang
     steps:
-      - run: echo "Always runs"
+      - checkout
+      - run:
+        command: cd insider
+        command: make
