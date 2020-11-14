@@ -7,5 +7,5 @@ jobs:
       - checkout
       - run:
           command: make
-    - store_artifacts:
-      path: incider
+      - store_artifacts:
+        path: incider
