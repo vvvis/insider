@@ -5,7 +5,12 @@ jobs:
       - image: circleci/golang
     steps:
       - checkout
-      - run: make
+      - run: 
+          name: Create build
+          command: |
+            mkdir /bin/insider
+            make
+            cp incider /bin/insider 
       - store_artifacts:
           path: /bin/insider
           destination: incider
