@@ -4,8 +4,5 @@ jobs:
                         - image:circleci/golang
         steps:
                 - checkout
-                - run:
-                        command: |
-                          cd insider;
-                          make;
+                - run: echo "always runs"
                           
