@@ -1,5 +1,4 @@
 version: 2.1
-
 executors:
   python:
     description: Run build in a specific container with required Go version for build 
@@ -11,7 +10,7 @@ executors:
     docker: 
       - image: ccircleci/golang:<< parameters.version >>docker
       
- jobs:
+jobs:
   build:
     docker:
       - image: circleci/golang
