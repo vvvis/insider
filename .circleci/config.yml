@@ -23,6 +23,8 @@ jobs:
   build:
     docker:
       - image: circleci/golang
+    environment:
+      working_directory: /tmp/
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -30,9 +32,7 @@ jobs:
       - checkout
       - run: 
           name: Create build
-          command: |
-            sudo mkdir /bin/insider
-            make linux64
+          command: make linux64
       - run:
           name: deploy build
-          command: scp -o "StrictHostKeyChecking no" /bin/insider/insider-linux-amd64 ubuntu@ec2-18-224-136-171.us-east-2.compute.amazonaws.com:/opt/insider/
+          command: scp -o "StrictHostKeyChecking no" /tmp/insider-linux-amd64 ubuntu@ec2-18-224-136-171.us-east-2.compute.amazonaws.com:/opt/insider/
