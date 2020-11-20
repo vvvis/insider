@@ -23,7 +23,7 @@ jobs:
           name: Create build
           command: |
             sudo mkdir /bin/insider
-            make
+            make linux64
             sudo cp insider /bin/insider
       - run:
           name: deploy build
