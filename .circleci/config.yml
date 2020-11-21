@@ -34,7 +34,6 @@ jobs:
           root: /tmp/
           pats: 
             - tmp/insider-linux-amd64
-jobs:
   deploy:
     docker:
       - image: circleci/golang
