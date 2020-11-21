@@ -23,9 +23,9 @@ commands:
   steps:
     - run: 
       name: Create build
-      command: |
-        make <<parameters.platform>>
-        mv <<parameters.platform>> /tmp/
+        command: |
+          make <<parameters.platform>>
+          mv <<parameters.platform>> /tmp/
     - persist_to_workspace:
         root: /tmp/
         paths: 
