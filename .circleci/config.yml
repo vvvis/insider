@@ -15,20 +15,20 @@ commands:
   make: #You can define on which system type to compile build. For possible combination of params read coresponding Makefile on github 
     parameters:
       platform:
-        default: "linux64"
+#        default: "linux64"
         type: string
       binary:
-        default: "insider-linux-amd64"
+#        default: "insider-linux-amd64"
         type: string
     steps:
       - run: 
           command: make <<parameters.platform>>
       - run: 
-          command: mv <<parameters.platform>> /tmp/
+          command: mv <<parameters.binary>> /tmp/
       - persist_to_workspace:
           root: /tmp/
           paths: 
-            - <<parameters.platform>>
+            - <<parameters.binary>>
 
 jobs:
   build:
@@ -59,7 +59,10 @@ jobs:
 workflows:
   main:
     jobs:
-      - build
+      - build:
+          - make:
+             platform: "linux64"
+             binary: "insider-linux-amd64"
       - deploy:
           requires:
             - build
