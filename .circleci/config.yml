@@ -50,8 +50,6 @@ workflows:
   main:
     jobs:
       - build
-#         context: 
-      - deploy
-#          context: 
+      - deploy:
           requires:
             - build
