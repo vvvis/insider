@@ -21,8 +21,10 @@ commands:
         default: "insider-linux-amd64"
         type: string
   steps:
-    - run: make <<parameters.platform>>
-    - run: mv <<parameters.platform>> /tmp/
+    - run: 
+        command: make <<parameters.platform>>
+    - run: 
+        command: mv <<parameters.platform>> /tmp/
     - persist_to_workspace:
         root: /tmp/
         paths: 
