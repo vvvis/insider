@@ -32,7 +32,7 @@ jobs:
             mv insider-linux-amd64 /tmp/
       - persist_to_workspace:
           root: /tmp/
-          pats: 
+          paths: 
             - tmp/insider-linux-amd64
   deploy:
     docker:
