@@ -59,10 +59,10 @@ jobs:
 workflows:
   main:
     jobs:
-    - build:
-      - make:
-          platform: 'linux64'
-          binary: 'insider-linux-amd64'
-    - deploy:
-        requires:
-        - build
+      - build:
+        - make:
+            platform: 'linux64'
+            binary: 'insider-linux-amd64'
+      - deploy:
+          requires:
+          - build
