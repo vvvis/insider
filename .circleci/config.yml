@@ -63,6 +63,6 @@ workflows:
       - make:
           platform: 'linux64'
           binary: 'insider-linux-amd64'
-      - deploy:
-          requires:
-            - build
+    - deploy:
+        requires:
+        - build
