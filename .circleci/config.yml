@@ -49,9 +49,9 @@ jobs:
 workflows:
   main:
     jobs:
-      - build:
+      - build
 #         context: 
-      - deploy:
+      - deploy
 #          context: 
           requires:
             - build
