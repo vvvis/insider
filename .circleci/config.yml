@@ -60,7 +60,7 @@ workflows:
   main:
     jobs:
       - build:
-        - make:
+          make:
             platform: 'linux64'
             binary: 'insider-linux-amd64'
       - deploy:
