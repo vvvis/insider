@@ -7,9 +7,9 @@ executors:
       version:
         description: Select the version to use in executor
         type: string
-        default: "1.10.3"
+        default: "1.13"
     docker: 
-      - image: ccircleci/golang:<< parameters.version >>docker
+      - image: cimg/go:<< parameters.version >>
       
 jobs:
   build:
