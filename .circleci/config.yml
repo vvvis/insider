@@ -10,21 +10,40 @@ executors:
         default: "1.13"
     docker: 
       - image: cimg/go:<< parameters.version >>
-      
+
+commands:
+  make: #You can define on which system type to compile build. For possible combination of params read coresponding Makefile on github 
+    parameters:
+      platform:
+        default: "linux64"
+        type: string
+      binary:
+        default: "insider-linux-amd64"
+        type: string
+  steps:
+    command: |
+      make <<parameters.platform>>
+      mv <<parameters.platform>> /tmp/
+    - persist_to_workspace:
+        root: /tmp/
+        paths: 
+          - <<parameters.platform>>
+
 jobs:
   build:
     executor: go
     steps:
       - checkout
-      - run: 
-          name: Create build
-          command: |
-            make linux64
-            mv insider-linux-amd64 /tmp/
-      - persist_to_workspace:
-          root: /tmp/
-          paths: 
-            - insider-linux-amd64
+      - make
+#      - run: 
+#          name: Create build
+#          command: |
+#            make linux64
+#            mv insider-linux-amd64 /tmp/
+#      - persist_to_workspace:
+#          root: /tmp/
+#          paths: 
+#            - insider-linux-amd64
   deploy:
     executor: go
     steps:
