@@ -32,10 +32,17 @@ commands:
 
 jobs:
   build:
+    parameters:
+      platform:
+        type: string
+      binary:
+        type: string
     executor: go
     steps:
       - checkout
-      - make
+      - make:
+          platform: <<parameters.platform>>
+          binary: <<parameters.binary>>
 #      - run: 
 #          name: Create build
 #          command: |
@@ -60,9 +67,8 @@ workflows:
   main:
     jobs:
       - build:
-          make:
-            platform: 'linux64'
-            binary: 'insider-linux-amd64'
+          platform: 'linux64'
+          binary: 'insider-linux-amd64'
       - deploy:
           requires:
           - build
