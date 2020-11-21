@@ -33,7 +33,7 @@ jobs:
       - persist_to_workspace:
           root: /tmp/
           paths: 
-            - tmp/insider-linux-amd64
+            - insider-linux-amd64
   deploy:
     docker:
       - image: circleci/golang
